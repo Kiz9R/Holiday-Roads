@@ -22,7 +22,7 @@
   --transition2: all 0.5s ease-in-out;
   --letterspace: 0.25rem;
   --lightshadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.25);
-  --darkshadow: 4px 10px 6px 0 rgba(0, 0, 0, 0.5);
+  --darkshadow: 4px 10px 6px 0 rgba(0, 0, 0, 0.6);
 }
 /* end of variables */
 /* reset */
@@ -84,7 +84,7 @@ a {
   border: 2px solid var(--green);
   padding: 0.3rem 0.1rem;
   display: inline-block;
-  transition: var(--transtion1);
+  transition: var(--transition1);
 }
 .main-btn:hover {
   background: var(--white1);
@@ -163,12 +163,24 @@ a {
   transition: var(--transition2);
   /* outline: 3px solid cyan;
   outline-offset: 0.2rem; */
+  animation: bounce 5s linear infinite;
 }
 .banner-btn:hover {
-  color: var(--green);
+  color: var(--white1);
   font-weight: bold;
-  background: var(--white1);
-  /* border: 3px solid var(--white1); */
+  background: var(--green);
+  border: 3px solid var(--white1);
+}
+@keyframes bounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 @media screen and (min-width: 768px) {
   .hero {
@@ -205,7 +217,7 @@ a {
   }
   .banner-btn {
     font-size: 1rem;
-    color: var(--white1);
+    color: var(--green);
     border: 3px solid var(--green);
   }
 }
@@ -262,6 +274,7 @@ a {
   background: var(--green);
   color: var(--candy);
   transform: scale(1.1);
+  cursor: pointer;
 }
 .service-icon {
   /* background: var(--green); */
@@ -320,3 +333,75 @@ a {
   }
 }
 /* end of services */
+/* feature */
+.featured {
+  background: var(--cherry);
+}
+.tour-card {
+  margin-bottom: 4rem;
+  background: var(--white2);
+  box-shadow: var(--lightshadow);
+  transition: var(--transition2);
+}
+.tour-card:hover {
+  box-shadow: var(--darkshadow);
+}
+.tour-img-container {
+  position: relative;
+}
+.tour-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--tea);
+  text-transform: capitalize;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+}
+.tour-footer {
+  padding: 1.2rem 1.5rem;
+}
+.tour-title {
+  text-transform: capitalize;
+}
+.tour-country {
+  color: var(--candy);
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: var(--googlefont5);
+  font-size: 1rem;
+  align-self: center;
+}
+.tour-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.tour-details p {
+  line-height: 0.2;
+  text-transform: capitalize;
+  font-family: var(--googlefont3);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--grey);
+  letter-spacing: 0.2rem;
+}
+.tour-link {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .featured-center {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .tour-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+@media screen and (min-width: 1170px) {
+  .tour-card {
+    flex: 0 0 calc(33.33333% - 1rem);
+  }
+}
+/* end of feature */
