@@ -147,6 +147,17 @@ a {
   background: var(--dark);
   padding-left: 3rem;
 }
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.07s linear;
+}
+.show-links {
+  height: 270px;
+  overflow: visible;
+  /* transition: var(--transition2); */
+}
+
 @media screen and (min-width: 992px) {
   .nav-toggle {
     display: none;
@@ -252,6 +263,7 @@ a {
   transition: var(--transition2);
   /* outline: 3px solid cyan;
   outline-offset: 0.2rem; */
+  -webkit-animation: bounce 5s linear infinite;
   animation: bounce 5s linear infinite;
 }
 .banner-btn:hover {
@@ -259,6 +271,17 @@ a {
   font-weight: bold;
   background: var(--green);
   border: 3px solid var(--white1);
+}
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 @keyframes bounce {
   0% {
@@ -276,7 +299,25 @@ a {
     /* background: linear-gradient(rgba(127, 255, 0, 0.5), rgba(127, 255, 0, 0.1)),
       url("../img/banner4.jpeg") center/cover no-repeat fixed; */
     background-color: transparent;
+    -webkit-animation: hero-slide 30s infinite ease;
     animation: hero-slide 30s infinite ease;
+  }
+  @-webkit-keyframes hero-slide {
+    0% {
+      background: url("../img/banner1.jpeg") center/cover no-repeat fixed;
+    }
+    25% {
+      background: url("../img/banner2.jpeg") center/cover no-repeat fixed;
+    }
+    50% {
+      background: url("../img/banner3.jpeg") center/cover no-repeat fixed;
+    }
+    75% {
+      background: url("../img/banner4.jpeg") center/cover no-repeat fixed;
+    }
+    100% {
+      background: url("../img/banner1.jpeg") center/cover no-repeat fixed;
+    }
   }
   @keyframes hero-slide {
     0% {
@@ -360,7 +401,7 @@ a {
   transition: var(--transition1);
 }
 .service:hover {
-  background: var(--green);
+  background: var(--tea);
   color: var(--candy);
   transform: scale(1.1);
   cursor: pointer;
@@ -566,6 +607,26 @@ a {
   outline: none;
   border: 1.5px solid var(--green);
 }
+::-webkit-input-placeholder {
+  font-family: var(--googlefont3);
+  font-weight: bold;
+  color: var(--candy);
+}
+::-moz-placeholder {
+  font-family: var(--googlefont3);
+  font-weight: bold;
+  color: var(--candy);
+}
+:-ms-input-placeholder {
+  font-family: var(--googlefont3);
+  font-weight: bold;
+  color: var(--candy);
+}
+::-ms-input-placeholder {
+  font-family: var(--googlefont3);
+  font-weight: bold;
+  color: var(--candy);
+}
 ::placeholder {
   font-family: var(--googlefont3);
   font-weight: bold;
@@ -609,7 +670,9 @@ a {
   transition: var(--transition1);
 }
 .footer-link:hover {
-  color: var(--green);
+  color: var(--tea);
+  background: var(--green);
+  padding: 0.2rem;
   transform: translateY(-10%);
 }
 .footer-icon {
@@ -638,3 +701,13 @@ a {
   color: orange;
 }
 /* end of footer */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--grey2);
+  transition: var(--transition1);
+  box-shadow: var(--lightshadow);
+  z-index: 1;
+}
