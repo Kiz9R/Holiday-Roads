@@ -706,7 +706,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--grey2);
+  background: var(--tea);
   transition: var(--transition1);
   box-shadow: var(--lightshadow);
   z-index: 1;
