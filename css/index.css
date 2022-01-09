@@ -299,8 +299,8 @@ a {
     /* background: linear-gradient(rgba(127, 255, 0, 0.5), rgba(127, 255, 0, 0.1)),
       url("../img/banner4.jpeg") center/cover no-repeat fixed; */
     background-color: transparent;
-    -webkit-animation: hero-slide 30s infinite ease;
-    animation: hero-slide 30s infinite ease;
+    -webkit-animation: hero-slide 30s alternate infinite ease;
+    animation: hero-slide 30s alternate infinite ease;
   }
   @-webkit-keyframes hero-slide {
     0% {
